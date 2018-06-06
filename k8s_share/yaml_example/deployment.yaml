@@ -1,0 +1,21 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80
+
+
+# apiVersion - 创建该对象所使用的 Kubernetes API 的版本
+# kind - 想要创建的对象的类型
+# metadata - 帮助识别对象唯一性的数据，包括一个 name 字符串、UID 和可选的 namespace
